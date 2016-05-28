@@ -40,7 +40,7 @@
 			
 			<entry name="MAV_CMD_OT_PARACHUTE" value="214">
                     <description>Mission command which control parachute</description>
-                    <param index="1">Enable FS (0=disable, 1=enable, 42=reset)</param>
+                    <param index="1">Enable FS (0=nochange, 1=enable, 2=disable, 42=reset)</param>
                     <param index="2">Land immediately(0=not, 1=land</param>
                     <param index="3">Set ignition(0=nochange, 1=on, 2=off)</param>
                     <param index="4">Set Parachute servo(0=nochange, 1=close, 2=open)</param>
@@ -1571,5 +1571,13 @@
             <field name="rpm1" type="float">RPM Sensor1</field>
             <field name="rpm2" type="float">RPM Sensor2</field>
         </message>
+		
+		<message id="227" name="OT_PARACHUTE_STATUS">
+			<description>OT Parachute status</description>
+			<field name="fs_status" type="uint8_t">OT FS status</field>
+			<field name="para_servo_position" type="uint8_t">Parachute servo position</field>
+			<field name="ignition_status" type="uint8_t">Ignition status</field>
+			<field name="gimbal_position" type="uint8_t">Gimbal position</field>
+		</message>
     </messages>
 </mavlink>
