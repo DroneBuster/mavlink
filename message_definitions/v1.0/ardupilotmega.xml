@@ -1565,7 +1565,7 @@
             <description>Gas sensor board reporting message</description>
             <field name="humidity" type="float">Air humidity</field>
             <field name="temp" type="float">Sensor tempeture</field>
-            <field name="press" type="uint32_t">Air pressure</field>
+            <field name="press" type="float">Air pressure</field>
             <field name="nh3_gas" type="float">NH3 consentration</field>
             <field name="no2_gas" type="float">NO2 consentration</field>
             <field name="co_gas" type="float">CO consentartion</field>
