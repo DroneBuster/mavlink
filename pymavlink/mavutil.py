@@ -78,15 +78,12 @@ def set_dialect(dialect):
     global mavlink, current_dialect
     from .generator import mavparse
     if 'MAVLINK20' in os.environ:
-        print("Using MAVLink 2.0")
         wire_protocol = mavparse.PROTOCOL_2_0
         modname = "pymavlink.dialects.v20." + dialect
     elif mavlink is None or mavlink.WIRE_PROTOCOL_VERSION == "1.0" or not 'MAVLINK09' in os.environ:
-        print("Using MAVLink 1.0")
         wire_protocol = mavparse.PROTOCOL_1_0
         modname = "pymavlink.dialects.v10." + dialect
     else:
-        print("Using MAVLink 0.9")
         wire_protocol = mavparse.PROTOCOL_0_9
         modname = "pymavlink.dialects.v09." + dialect
 
@@ -917,6 +914,7 @@ class mavtcp(mavfile):
             retries -= 1
             if retries <= 0:
                 self.port.connect(self.destination_addr)
+                break
             else:
                 try:
                     self.port.connect(self.destination_addr)
@@ -1100,6 +1098,7 @@ class mavlogfile(mavfile):
         self._last_message = msg
         if msg.get_type() != "BAD_DATA":
             self._last_timestamp = msg._timestamp
+        msg._link = self._link
 
 
 class mavmemlog(mavfile):
@@ -1426,7 +1425,10 @@ mode_mapping_acm = {
     13 : 'SPORT',
     14 : 'FLIP',
     15 : 'AUTOTUNE',
-    16 : 'POSHOLD'
+    16 : 'POSHOLD',
+    17 : 'BRAKE',
+    18 : 'THROW',
+    19 : 'AVOID_ADSB',
     }
 mode_mapping_rover = {
     0 : 'MANUAL',
