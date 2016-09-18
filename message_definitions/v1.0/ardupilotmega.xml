@@ -35,7 +35,7 @@
             <entry name="MAV_CMD_OT_PARACHUTE" value="214">
                     <description>Mission command which control parachute</description>
                     <param index="1">Enable FS (0=nochange, 1=enable, 2=disable, 42=reset)</param>
-                    <param index="2">Land immediately(0=not, 1=land</param>
+                    <param index="2">Land immediately(0=not, 1=land(with delay), 2=land(no delay)</param>
                     <param index="3">Set ignition(0=nochange, 1=on, 2=off)</param>
                     <param index="4">Set Parachute servo(0=nochange, 1=close, 2=open)</param>
                     <param index="5">Empty</param>
