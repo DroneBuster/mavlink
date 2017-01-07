@@ -1493,6 +1493,11 @@
             <field name="I" type="float">I component</field>
             <field name="D" type="float">D component</field>
         </message>
+		
+		<message id="195" name="ROTARY_ENCODER">
+			<description>Rotary encoder data</description>
+			<field name="position" type="float">position (-pi to pi)</field>
+		</message>
 
         <message id="200" name="GIMBAL_REPORT">
             <description>3 axis gimbal mesuraments</description>
