@@ -1156,6 +1156,9 @@
             <field name="pointing_a" type="int32_t">pitch(deg*100)</field>
             <field name="pointing_b" type="int32_t">roll(deg*100)</field>
             <field name="pointing_c" type="int32_t">yaw(deg*100)</field>
+			<field name="target_a" type="int32_t">t_pitch(deg*100)</filed>
+			<field name="target_b" type="int32_t">t_roll(deg*100)</filed>
+			<field name="target_c" type="int32_t">t_yaw(deg*100)</filed>
         </message>
 
         <!-- geo-fence messages -->
@@ -1497,6 +1500,7 @@
 		<message id="195" name="ROTARY_ENCODER">
 			<description>Rotary encoder data</description>
 			<field name="position" type="float">position (-pi to pi)</field>
+			<field name="raw_position" type="float">Raw position</field>
 		</message>
 
         <message id="200" name="GIMBAL_REPORT">
