@@ -1288,6 +1288,11 @@
       <field type="float" name="cross_track_error" units="m">Deepstall cross track error in meters (only valid when in DEEPSTALL_STAGE_LAND)</field>
       <field type="uint8_t" name="stage" enum="DEEPSTALL_STAGE">Deepstall stage, see enum MAV_DEEPSTALL_STAGE</field>
     </message>
+    <message id="196" name="ROTARY_ENCODER">
+      <description>Encoder data</description>
+      <field type="float" name="enc_pos">Encoder position</field>
+      <field type="float" name="enc_pos_raw">Raw encoder position</field>
+    </message>
     <message id="200" name="GIMBAL_REPORT">
       <description>3 axis gimbal mesuraments</description>
       <field type="uint8_t" name="target_system">System ID</field>
